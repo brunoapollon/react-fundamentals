@@ -1,7 +1,20 @@
-import React, { Children } from "react";
+import React, { Children, useContext } from "react";
 import PropTypes from "prop-types";
+import { ThemeContext } from "./ThemeContext";
 export default function Button(props) {
-  return <button onClick={props.onClick}>{props.children}</button>;
+  const { theme } = useContext(ThemeContext);
+
+  return (
+    <button
+      onClick={props.onClick}
+      style={{
+        color: theme === "dark" ? "#fff" : "#000",
+        background: theme === "dark" ? "#000" : "#fff",
+      }}
+    >
+      {props.children}
+    </button>
+  );
 }
 
 Button.propTypes = {

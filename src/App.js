@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 
 import Post from "./Post";
+import { ThemeProvider } from "./ThemeContext";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -47,7 +48,7 @@ function App() {
     );
   }
   return (
-    <>
+    <ThemeProvider>
       <Header title="JStack's Blog">
         <h2>
           Posts da semana
@@ -62,7 +63,7 @@ function App() {
           post={postElement}
         />
       ))}
-    </>
+    </ThemeProvider>
   );
 }
 
