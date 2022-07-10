@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Header from "./Header";
+import Header from "../Header";
 
-import Post from "./Post";
-import { ThemeProvider } from "./ThemeContext";
+import Post from "../Post";
+import { ThemeProvider } from "../../context/ThemeContext";
 
 function App() {
   const [posts, setPosts] = useState([
